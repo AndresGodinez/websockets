@@ -1,0 +1,17 @@
+<button onclick="sendText()">Enviar Datos </button>
+
+<script>
+
+//conecto
+var exampleSocket = new WebSocket("ws://127.0.0.1:8001");
+//El envio
+function sendText() {
+  var msg = {
+    action: "imprimir",
+    date: Date.now()
+  };
+  exampleSocket.send(JSON.stringify(msg));
+  
+} 
+
+</script>
